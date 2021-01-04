@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<!-- saved from url=(0052)https://javascript-grunder-2021.netlify.app/kattcha/ -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inlämningsuppgift 5</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+      function myFunction(id) {
+        document.getElementById("button").disabled = true;
+        document.getElementById(id).classList.toggle("vald");
+        var result1 = document.getElementById('kattcha1').classList.contains('vald');
+        var result2 = document.getElementById('kattcha2').classList.contains('vald');
+        var result3 = document.getElementById('kattcha3').classList.contains('vald');
+        var result4 = document.getElementById('kattcha4').classList.contains('vald');
+        var result5 = document.getElementById('kattcha5').classList.contains('vald');
+        var result6 = document.getElementById('kattcha6').classList.contains('vald');
+        if (result3 && result4 && result6)
+        {
+          if (!result1 && !result2 && !result5)
+          {
+            alert('valda')
+            document.getElementById("button").disabled = false;
+          }
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Välj alla bilder med katter på</h1>
+    <h3>av: Andreas Brunnström</h3>
+    <section>
+      <div id="kattcha1" class="kattcha" onclick="myFunction(this.id)"></div>
+      <div id="kattcha2" class="kattcha" onclick="myFunction(this.id)"></div>
+      <div id="kattcha3" class="kattcha katt" onclick="myFunction(this.id)"></div>
+      <div id="kattcha4" class="kattcha katt" onclick="myFunction(this.id)"></div>
+      <div id="kattcha5" class="kattcha" onclick="myFunction(this.id)"></div>
+      <div id="kattcha6" class="kattcha katt" onclick="myFunction(this.id)"></div>
+    </section>
+    <button id="button" disabled="">Fortsätt</button>
+  </body>
+</html>
